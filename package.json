@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.105.1",
+    "elysia": "^1.4.28"
+  },
+  "name": "blocklabs-project",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

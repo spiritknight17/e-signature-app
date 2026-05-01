@@ -11,6 +11,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.j
 
 export default function Sign() {
   const { id } = useParams<{ id: string }>();
+  // @ts-ignore - signature state kept for potential future use
   const [signature, setSignature] = useState<any>(null);
   const [documentInfo, setDocumentInfo] = useState<any>(null);
   
@@ -251,7 +252,8 @@ export default function Sign() {
                 nodeRef={dragRef} /* 1. Pass the ref to Draggable */
                 bounds="parent"
                 position={sigPosition}
-                onStop={(e, data) => setSigPosition({ x: data.x, y: data.y })}
+                // @ts-ignore - event parameter is required by library signature but unused
+                onStop={(_e, data) => setSigPosition({ x: data.x, y: data.y })}
                 disabled={isSubmitting}
               >
               <div 

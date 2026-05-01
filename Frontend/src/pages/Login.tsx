@@ -26,7 +26,18 @@ export default function Login() {
       login(response.data.user, response.data.session.access_token);
       navigate('/dashboard');
     } catch (err: any) {
-      setError(err.response?.data?.message || 'Invalid login credentials. Please try again.');
+      console.error("Login error:", err);
+      let errorMessage = 'Invalid login credentials. Please try again.';
+      if (err.response) {
+        errorMessage = typeof err.response.data === 'string' 
+          ? err.response.data 
+          : err.response.data?.message || errorMessage;
+      } else if (err.request) {
+        errorMessage = "Network Error: Could not connect to the backend. Please check your VITE_API_URL.";
+      } else {
+        errorMessage = err.message;
+      }
+      setError(errorMessage);
     }
   };
 

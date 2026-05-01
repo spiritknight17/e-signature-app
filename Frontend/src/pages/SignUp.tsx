@@ -17,7 +17,24 @@ export default function Signup() {
       await api.post('/users', { email, username, password });
       navigate('/login');
     } catch (err: any) {
-      setError(err.response?.data?.message || 'Error creating account. Please try again.');
+      console.error("Signup error:", err);
+      let errorMessage = 'Error creating account. Please try again.';
+      
+      if (err.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        errorMessage = typeof err.response.data === 'string' 
+          ? err.response.data 
+          : err.response.data?.message || errorMessage;
+      } else if (err.request) {
+        // The request was made but no response was received (e.g. Network Error / CORS)
+        errorMessage = "Network Error: Could not connect to the backend. Please check your VITE_API_URL.";
+      } else {
+        // Something happened in setting up the request
+        errorMessage = err.message;
+      }
+      
+      setError(errorMessage);
     }
   };
 

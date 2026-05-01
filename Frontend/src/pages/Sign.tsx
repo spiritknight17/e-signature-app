@@ -11,7 +11,6 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.j
 
 export default function Sign() {
   const { id } = useParams<{ id: string }>();
-  const [signature, setSignature] = useState<any>(null);
   const [documentInfo, setDocumentInfo] = useState<any>(null);
   
   // PDF Rendering State
@@ -43,7 +42,6 @@ export default function Sign() {
       try {
         setLoading(true);
         const sigRes = await api.get(`/signatures/${id}`);
-        setSignature(sigRes.data);
 
         const docRes = await api.get(`/documents/${sigRes.data.documentId}`);
         setDocumentInfo(docRes.data);
@@ -251,7 +249,7 @@ export default function Sign() {
                 nodeRef={dragRef} /* 1. Pass the ref to Draggable */
                 bounds="parent"
                 position={sigPosition}
-                onStop={(e, data) => setSigPosition({ x: data.x, y: data.y })}
+                onStop={(_e, data) => setSigPosition({ x: data.x, y: data.y })}
                 disabled={isSubmitting}
               >
               <div 

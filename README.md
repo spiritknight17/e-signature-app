@@ -93,10 +93,12 @@ bun test
 
 ---
 
+## Live Deployment Links:
+Frontend: e-signature-app-frontend.vercel.app
+Backend: https://e-signature-backend.onrender.com/swagger
+
 ## AI Collaboration Acknowledgment
 This project was built in collaboration with Trae AI. The AI agent was leveraged for:
-- Scaffolding the initial Vite and ElysiaJS environments.
-- Generating Supabase database connection and authentication logic.
 - Implementing complex PDF rendering and signature embedding using `pdf-lib` and `pdfjs-dist`.
 - Configuring and troubleshooting GitHub Actions CI pipelines and Vercel/Render deployments.
 All AI-generated code was actively reviewed, tested, and validated to ensure strict adherence to the project requirements.

@@ -23,7 +23,15 @@ export default function Sign() {
   const [pdfDimensions, setPdfDimensions] = useState({ width: 0, height: 0 });
   
   // The scale used to render the PDF in the browser UI
-  const pdfScale = 1.2; 
+  const [pdfScale, setPdfScale] = useState(window.innerWidth < 768 ? 0.6 : 1.2);
+
+  useEffect(() => {
+  const handleResize = () => {
+      setPdfScale(window.innerWidth < 768 ? 0.6 : 1.2);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   
   // Signature State
   const [sigDataUrl, setSigDataUrl] = useState<string | null>(null);
@@ -263,8 +271,8 @@ export default function Sign() {
                 top: 0, 
                 left: 0, 
                 cursor: isSubmitting ? 'not-allowed' : 'move', 
-                width: 200, 
-                height: 100, 
+                width: window.innerWidth < 768 ? 100 : 200, 
+                height: window.innerWidth < 768 ? 50 : 100, 
                 border: '2px dashed #3b82f6', 
                 backgroundColor: 'rgba(59, 130, 246, 0.1)',
                 zIndex: 10

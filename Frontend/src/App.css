@@ -411,3 +411,189 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+@media (max-width: 850px) {
+  .dashboard-main {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .dashboard-header nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .primary-button, 
+  .secondary-button, 
+  .action-button, 
+  .action-link {
+    padding: 0.8rem 1.5rem; 
+    width: 100%;         
+    box-sizing: border-box;
+  }
+
+
+  .action-link {
+    margin: 10px 0 0 0; 
+  }
+
+
+  .dashboard-header img {
+    width: 80px; 
+    height: 80px;
+    max-height: none;
+  }
+
+
+  .document-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .doc-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 850px) {
+
+  .auth-form {
+    flex-direction: column;
+    min-width: 100%; 
+    max-width: 100%;
+  }
+
+
+  .one, .two {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .auth-form img {
+    max-height: 15vh; 
+    margin: 0 auto;
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+
+  .sign-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .sign-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+
+  .pdf-workspace {
+    padding: 0.5rem;
+    border-radius: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+
+  .pdf-toolbar {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .pdf-toolbar .secondary-button, 
+  .pdf-toolbar .action-button {
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    flex: 1;
+  }
+
+
+  .modal-content {
+    width: 95%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+
+  .sig-pad-container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .sig-canvas {
+    width: 100% !important; 
+    height: auto !important;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .modal-actions button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+@media (max-width: 850px) {
+
+  .auth-form {
+    flex-direction: column;
+    min-width: 100%; 
+    max-width: 100%;
+    box-shadow: none; 
+  }
+
+  .one, .two {
+    width: 100%;
+    padding: 2rem 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .auth-form .one img {
+    max-height: 12vh; 
+    width: auto;
+    margin: 0 auto;
+  }
+  .primary-button {
+    padding: 0.9375rem 1.5rem; 
+    width: 100%;
+  }
+}
+@media (max-width: 850px) {
+  .card-form {
+    padding: 2rem 1.5rem;
+    width: 90%;      
+    margin: 2rem auto;
+  }
+  .form-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .primary-button, 
+  .secondary-button {
+    padding: 0.9375rem 1.5rem !important; 
+    width: 100%;                      
+    box-sizing: border-box;
+  }
+  .form-group input {
+    font-size: 16px;
+  }
+
+  .card-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
